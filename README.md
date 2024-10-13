@@ -18,14 +18,14 @@ return {
     config = function()
       require('tempfile').setup({
         extension = '.txt', -- Default file extension
-        default_command = "<leader>tt" -- Change the default keyboard shortcut here
+        default_command = "<leader>tt", -- Change the default keyboard shortcut here
         -- Custom keyboard shortcuts for different file extensions
         extensions = {
           ['.md'] = '<leader>tm',
           -- Add more extensions here
         },
       })
-    end,
+    end
   },
 ```
 
@@ -37,7 +37,7 @@ return {
     config = function()
       require('tempfile').setup({
         extension = '.txt', -- Default file extension
-        default_command = "<leader>tt" -- Change the default keyboard shortcut here
+        default_command = "<leader>tt", -- Change the default keyboard shortcut here
         -- Custom keyboard shortcuts for different file extensions
         extensions = {
           ['.md'] = '<leader>tm',
@@ -50,6 +50,6 @@ return {
           ['.rs'] = '<leader>tr',
         },
       })
-    end,
+    end
   },
 ```
