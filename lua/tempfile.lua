@@ -1,15 +1,14 @@
--- ~/.config/nvim/lua/tempfile.lua
-
 local tempfile = {}
 
 -- Function to create a temporary file
 function tempfile.create_temp_file(extension)
-	local temp_filename = os.tmpname() .. (extension or ".txt")
+	local temp_filename = vim.fn.tempname() .. (extension or ".txt")
+
 	local temp_file = io.open(temp_filename, "w")
 	if temp_file then
 		temp_file:close()
 		vim.cmd("edit " .. temp_filename)
-		vim.cmd("autocmd BufDelete <buffer> silent! !rm " .. temp_filename)
+		vim.cmd("autocmd BufDelete <buffer> lua vim.fn.delete('" .. temp_filename .. "')")
 	else
 		print("Could not create temporary file.")
 	end
