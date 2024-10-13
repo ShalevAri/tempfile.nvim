@@ -18,14 +18,17 @@ end
 -- Function to set up key mappings
 function tempfile.setup(config)
 	local extension = config.extension or ".txt"
+	local default_command = config.default_command or "<leader>t"
 
+	-- Map the default command for the .txt file
 	vim.api.nvim_set_keymap(
 		"n",
-		"<leader>t",
+		default_command,
 		':lua require("tempfile").create_temp_file("' .. extension .. '")<CR>',
 		{ noremap = true, silent = true }
 	)
 
+	-- Map other extensions
 	if config.extensions then
 		for ext, key in pairs(config.extensions) do
 			vim.api.nvim_set_keymap(
