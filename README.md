@@ -13,8 +13,7 @@
 ### Using Lazy.nvim
 
 ```lua
-require('lazy').setup({
-  {
+return {
     'ShalevAri/tempfile.nvim',
     config = function()
       require('tempfile').setup({
@@ -28,14 +27,12 @@ require('lazy').setup({
       })
     end,
   },
-})
 ```
 
 ### Default Configuration for Lazy (Recommended)
 
 ```lua
-require('lazy').setup({
-  {
+return {
     'ShalevAri/tempfile.nvim',
     config = function()
       require('tempfile').setup({
@@ -55,5 +52,4 @@ require('lazy').setup({
       })
     end,
   },
-})
 ```
