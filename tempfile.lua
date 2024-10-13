@@ -18,7 +18,7 @@ end
 -- Function to set up key mappings
 function tempfile.setup(config)
 	local extension = config.extension or ".txt"
-	local default_command = config.default_command or "<leader>t"
+	local default_command = config.default_command or "<leader>tt"
 
 	-- Map the default command for the .txt file
 	vim.api.nvim_set_keymap(
